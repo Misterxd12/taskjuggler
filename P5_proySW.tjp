@@ -68,7 +68,9 @@ resource dev2 "Samantha Müller" {
 resource dev3 "Peter Green" {
   email "kkk@unizar.es"
 }
-
+resource dev4 "Peter Green" {
+  email "868419@unizar.es"
+}
 # Now we specify the work packages. The whole project is described as
 # a task that contains subtasks. These subtasks are then broken down
 # into smaller tasks and so on. The innermost tasks describe the real
@@ -160,16 +162,16 @@ task WMGame "Web & Mobile Game" {
     depends WMGame.tback.tBEd
     task tmGUId "Mobile GUI Design" {
       effort 8d
-      allocate dev3
+      allocate dev3, dev4
     }
     task tmFEc "Mobile Front End Construction" {
       effort 12d
-      allocate dev2, dev3
+      allocate dev2, dev3, dev4
       depends WMGame.tmobF.tmGUId
     }
     task tmFEt "Mobile Front End Test" {
       effort 5d
-      allocate dev1
+      allocate dev1, dev4
       depends WMGame.tmobF.tmFEc
     }
   }
@@ -181,7 +183,7 @@ task WMGame "Web & Mobile Game" {
     depends WMGame.tback.tbackDev
     task tcloudEval "Cloud Provider Evaluation" {
       effort 3d
-      allocate dev1, boss
+      allocate dev1, boss, dev4
     }
     task tcloudDeploy "Cloud Deployment Setup" {
       effort 7d
