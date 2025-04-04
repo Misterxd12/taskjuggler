@@ -68,8 +68,10 @@ resource dev2 "Samantha Müller" {
 resource dev3 "Peter Green" {
   email "kkk@unizar.es"
 }
-resource dev4 "Peter Green" {
+resource dev4 "Emilliano Recuenco" {
   email "868419@unizar.es"
+   rate 100
+  limits dailymax 4h
 }
 # Now we specify the work packages. The whole project is described as
 # a task that contains subtasks. These subtasks are then broken down
